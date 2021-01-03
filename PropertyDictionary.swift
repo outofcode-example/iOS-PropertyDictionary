@@ -14,11 +14,8 @@ struct PropertyDictionary {
     }
 
     subscript(dynamicMember string: String) -> String? {
-        if let value = properties[string] {
-            return String(describing: value)
-        } else {
-            return nil
-        }
+        guard let value = properties[string] else { return nil }
+        return String(describing: value)
     }
 }
 
