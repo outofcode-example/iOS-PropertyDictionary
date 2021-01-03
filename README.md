@@ -2,9 +2,15 @@
 Using dictionary a like property.
 
 # Cool
-let dictionary: [String : Any] = [
-    "abc": 1, "a": "abc"
+```
+let dictionary: [String: Any] = [
+    "int": 1, "string": "abc", "bool": true
 ]
-
+        
 let property = PropertyDictionary(dictionary)
-print("test:", property.a ?? "nil")
+let int = property.int?.intValue
+let string = property.string
+let bool = property.bool?.boolValue
+        
+print(int, string, bool)
+```
